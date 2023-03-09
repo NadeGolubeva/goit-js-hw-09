@@ -6,9 +6,9 @@ form.addEventListener("input", onInput);
 form.addEventListener("submit", onClick);
 
 function onInput(e) {
-  console.log(e.target.value);
+  // console.log(e.target.value);
   formData[e.target.name] = e.target.value;
-  console.log(formData);
+  // console.log(formData);
 }
 
 function onClick(e) {
@@ -17,7 +17,7 @@ function onClick(e) {
   let stepDelay = formData.step;
   let amountPromise = formData.amount;
 
-  console.log(startDelay, stepDelay, amountPromise);
+  // console.log(startDelay, stepDelay, amountPromise);
   for (let i = 0; i < amountPromise; i += 1) {
     createPromise(1 + i, startDelay + i * stepDelay)
       .then(({ position, delay }) => {

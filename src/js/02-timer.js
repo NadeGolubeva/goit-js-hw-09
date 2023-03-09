@@ -11,6 +11,8 @@ const secRest = document.querySelector("span[data-seconds]");
 
 btnStart.disabled = true;
 
+btnStart.addEventListener("click", onStartClick);
+
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -53,7 +55,6 @@ function convertMs(ms) {
 // console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
 // console.log(convertMs(24140000000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
 
-btnStart.addEventListener("click", onStartClick);
 function onStartClick(e) {
   let timer = setInterval(() => {
     let counter = new Date(datePointed.value) - new Date();
@@ -66,7 +67,8 @@ function onStartClick(e) {
       hoursRest.textContent = steps.hours;
       minsRest.textContent = steps.minutes;
       secRest.textContent = steps.seconds;
-    } else return;
+    }
+    // else return;
   }, 1000);
 }
 
